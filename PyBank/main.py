@@ -24,8 +24,12 @@ bank_df['change'] = bank_df['profit'].diff(periods=1)
 average = round(bank_df['change'].mean(), 2)
 largest = int(bank_df['change'].max())
 smallest = int(bank_df['change'].min())
+day1 = bank_df['Date'][79]
+day2 = bank_df['Date'][49]
 
 #print the output as required
-print(f'Total Months: {no_months} \n Total: ${net_profit} \n Average Change: ${average} \n Greatest Increase in Profits: (${largest}) \n Greatest Decrease in Profits: (${smallest})')
+print(f'Total Months: {no_months} \n Total: ${net_profit} \n Average Change: ${average} \n Greatest Increase in Profits: {day1} (${largest}) \n Greatest Decrease in Profits: {day2} (${smallest})')
 
-
+#print results to txt file
+with open('bank.txt', 'a') as f:
+    print(f'Total Months: {no_months} \n Total: ${net_profit} \n Average Change: ${average} \n Greatest Increase in Profits: {day1} (${largest}) \n Greatest Decrease in Profits: {day2} (${smallest})', file=f)
