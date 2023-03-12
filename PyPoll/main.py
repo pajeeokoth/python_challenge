@@ -23,3 +23,7 @@ winner = percent_votes.max()
 
 #results tally
 print(f' Election Results \n -------------------- \n Total Votes: {votes} \n -------------------- \n {percent_votes} ({votes_received}) \n  -------------------- \n Winner: {candidate_name[1]} \n ------------------------')
+
+#print results to txt file
+with open('poll.txt', 'a') as f:
+    print(f' Election Results \n -------------------- \n Total Votes: {votes} \n -------------------- \n {percent_votes} ({votes_received}) \n  -------------------- \n Winner: {candidate_name[1]} \n ------------------------')
